@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import useFetch from './util/useFetch';
+import { Suspense } from 'react';
+
+const Main = React.lazy(() => import("./Main"));
+const Loading = React.lazy(() => import('./component/Loading'));
+
 
 function App() {
+
+  const [memos, isPending, error] = useFetch("http://localhost:3001/memo/")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {error && <div>{error}</div>}
+      <Suspense fallback={<Loading />}>
+        <div className='app'>
+          <Routes>
+            <Route exact path="/" element={<Main memos={memos} isPending={isPending} />} />
+          </Routes>
+        </div>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
