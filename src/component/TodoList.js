@@ -1,7 +1,6 @@
 
 import styled from 'styled-components'
 import { fetchDelete } from '../util/api';
-import { useParams } from "react-router-dom";
 
 const MemoView = styled.div`
 padding: 10px 16px;
@@ -26,8 +25,6 @@ const Button = styled.button`
 `;
 
 const TodoList = ({ memos }) => {
-  const { id } = useParams();
-
   const handleDeleteClick = (id) => {
     console.log(id);
     fetchDelete('http://localhost:3001/memo/', id);

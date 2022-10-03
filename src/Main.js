@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Loading from './component/Loading'
 import TodoList from './component/TodoList'
 import InputForm from './component/InputForm'
+import { fetchDelete } from './util/api'
 
 const Container = styled.div`
 display: flex;
@@ -28,6 +29,11 @@ margin-bottom: 12px;
 const Main = ({ memos, isPending }) => {
 
   const handleRemoveClick = () => {
+    console.log(memos.length);
+
+    memos.map((memo) => (
+      fetchDelete('http://localhost:3001/memo/', memo.id)
+    ))
     console.log("지우기");
   }
 

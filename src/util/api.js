@@ -19,7 +19,7 @@ export const fetchCreate = (url, data) => {
 }
 
 export const fetchDelete = (url, id) => {
-  console.log(id);
+
   fetch(`${url}${id}`, {
     method: "DELETE",
   })
