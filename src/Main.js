@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 import Loading from './component/Loading'
-import TodoList from './component/TodoList'
+import TodoLists from './component/TodoLists'
 import InputForm from './component/InputForm'
 import { fetchDelete } from './util/api'
 
@@ -46,7 +46,7 @@ const Main = ({ memos, isPending }) => {
           <button onClick={handleRemoveClick}>Delete All</button>
         </Title>
         {isPending && <Loading />}
-        {memos && <TodoList memos={memos} />}
+        {memos && <TodoLists memos={memos} />}
         {<InputForm memos={memos} />}
       </Box>
     </Container>
