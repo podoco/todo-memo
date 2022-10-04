@@ -7,25 +7,35 @@ const MemoView = styled.div`
 padding: 10px 16px;
 justify-content: space-between;
 display: flex;
-margin: 20px 0;
+margin: 5px 0;
 border-radius:4px;
 box-shadow: 2px 2px rgba(0, 0, 255, .2);
+
 background-color: rgb(243,244,246);
-border-bottom: 1px solid #fafafa;
+
 `;
 const Div = styled.div`
+  display:flex;
+  position: relative;
   align-items: center;
   text-align: center;
 `;
 const Button = styled.button`
   padding: 8px 16px;
+  margin-left: 2px;
   float: right;
+  cursor: pointer;
+  justify-content: center;
 `;
 
-const List = ({ memos, id, title }) => {
+const Input = styled.input`
+  height: 80%;
+`;
+
+
+const List = ({ id, title }) => {
 
   const [value, setValue] = useState(title);
-
   const [isEditing, setIsEditing] = useState(false);
 
   const handleDeleteClick = (id) => {
@@ -44,22 +54,18 @@ const List = ({ memos, id, title }) => {
   if (isEditing) {
 
     return (
-
       <MemoView key={id}>
-
         <form onSubmit={handleSubmit}>
-          <input
+          <Input
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
         </form>
-
         <Div>
-          <Button onClick={() => handleDeleteClick(id)}>x</Button>
           <Button type="submit" onClick={handleSubmit}>save</Button>
+          <Button onClick={() => handleDeleteClick(id)}>x</Button>
         </Div>
       </MemoView>
-
     )
 
 
@@ -67,16 +73,15 @@ const List = ({ memos, id, title }) => {
     //기본모드  
   } else {
     return (
-
       <MemoView key={id}>
         <h2>{title}</h2>
         <Div>
-          <Button onClick={() => handleDeleteClick(id)}>x</Button>
           <Button onClick={() => setIsEditing(true)}>edit</Button>
+          <Button onClick={() => handleDeleteClick(id)}>x</Button>
         </Div>
       </MemoView>
-    )
 
+    )
 
   }
 }

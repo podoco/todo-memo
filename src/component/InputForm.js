@@ -16,12 +16,14 @@ border-radius: 4px;
 `;
 const InputButton = styled.input`
 color: rgb(96,165,250);
-border-color: (96,165,250);
+cursor: pointer;
+background-color: whitesmoke;
+border-color: rgb(96,165,250);
 border-radius: 4px;
 
 &:hover{
   color: white;
-  background-color: aqua;
+  background-color: rgb(191,219,254);
 }
 
 `;

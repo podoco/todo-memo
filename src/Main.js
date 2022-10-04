@@ -18,12 +18,28 @@ padding: 24px;
 margin: 16px;
 background-color: white;
 border: 4px;
+box-shadow: -9px 17px 13px rgb(0 0 0 /16%);
 `;
 
 const Title = styled.div`
-display: flex;
-justify-content: space-between;
-margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+ 
+`;
+
+const Button = styled.button`
+  height: 40px;
+  font-size: medium;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 6px;
+
+  &:hover{
+    color: blue;
+  }
 `;
 
 const Main = ({ memos, isPending }) => {
@@ -43,7 +59,7 @@ const Main = ({ memos, isPending }) => {
       <Box>
         <Title>
           <h1>TodoMemo</h1>
-          <button onClick={handleRemoveClick}>Delete All</button>
+          <Button onClick={handleRemoveClick}>Delete All</Button>
         </Title>
         {isPending && <Loading />}
         {memos && <TodoLists memos={memos} />}
