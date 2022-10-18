@@ -4,14 +4,14 @@ import { fetchDelete } from '../util/api';
 import { fetchPatch } from '../util/api';
 
 const MemoView = styled.div`
-padding: 10px 16px;
+padding: 8px 16px;
 justify-content: space-between;
 display: flex;
-margin: 5px 0;
-border-radius:4px;
-box-shadow: 2px 2px rgba(0, 0, 255, .2);
-
-background-color: rgb(243,244,246);
+margin: 9px 0;
+border-radius:8px;
+box-shadow: 3px 3px rgba(0, 0, 255, .3);
+background-color: ghostwhite;
+color: rgba(250,108,108,1);
 
 `;
 const Div = styled.div`
@@ -23,13 +23,24 @@ const Div = styled.div`
 const Button = styled.button`
   padding: 8px 16px;
   margin-left: 2px;
+  background-color: white;
+  color:  rgba(250,108,108,1);
+  border-radius: 6px;
+  box-shadow: 3px 3px rgba(0, 0, 255, .3);
   float: right;
   cursor: pointer;
   justify-content: center;
-`;
+
+  &:hover{
+    color: white;
+    background-color: palevioletred;
+  };
+`
 
 const Input = styled.input`
-  height: 80%;
+height: 40px;
+margin: 10px 0px;
+font-size: large;
 `;
 
 

@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3004/';
+const BASE_URL = 'http://localhost:3002/';
 
 
 export const fetchCreate = (url, data) => {

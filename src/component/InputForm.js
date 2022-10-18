@@ -12,18 +12,26 @@ padding: 8px 12px;
 margin-right: 16px;
 color: rgb(107 114 128);
 border-radius: 4px;
+box-shadow: 5px 6px 2px 0px rgba(0,0,0,0.55);
+
 
 `;
 const InputButton = styled.input`
-color: rgb(96,165,250);
 cursor: pointer;
+width: 70px;
 background-color: whitesmoke;
-border-color: rgb(96,165,250);
+border: none;
+font-size: medium;
+transition: all 200ms ease-in;
+box-shadow: 5px 6px 2px 0px rgba(0,0,0,0.55);
 border-radius: 4px;
+background: linear-gradient(90deg, 
+    rgba(171,72,237,1) 0%, rgba(250,108,108,1) 50%, rgba(249,181,86,1) 100%);
 
 &:hover{
-  color: white;
+  color: whitesmoke;
   background-color: rgb(191,219,254);
+  transform: scale(1.02);
 }
 
 `;
