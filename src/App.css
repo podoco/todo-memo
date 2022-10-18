@@ -1,6 +1,9 @@
 body{
-  background-color: aliceblue;
+  background-color:aliceblue;
   max-width: 600px;
   margin: auto;
   margin-top: 50px;
+}
+.loading{
+  text-align: center;
 }
