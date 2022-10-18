@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktodo_memo=self.webpackChunktodo_memo||[]).push([[516],{516:function(i,o,a){a.r(o);var e=a(184);o.default=function(){return(0,e.jsx)("div",{className:"loading",children:(0,e.jsx)("img",{src:"https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",alt:"loading"})})}}}]);
+//# sourceMappingURL=516.0d80f8c6.chunk.js.map
